@@ -12,6 +12,6 @@ public class MoveRight : MonoBehaviour {
     {
         rb = this.GetComponent<Rigidbody>();
 
-        rb.velocity = transform.up * speed;
+        rb.velocity = transform.right * speed;
     }
 }

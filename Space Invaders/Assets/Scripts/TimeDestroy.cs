@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroybyTime : MonoBehaviour {
+public class TimeDestroy : MonoBehaviour {
 
     public float lifeTime;
 
-	void Start () {
+    void Start()
+    {
         Destroy(gameObject, lifeTime);
-	}
+    }
 }

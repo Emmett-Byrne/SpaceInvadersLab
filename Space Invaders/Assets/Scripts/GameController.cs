@@ -8,18 +8,23 @@ public class GameController : MonoBehaviour {
     public float spawnWait;
 
     public Text scoreText;
-    public Text livesText;
     public Text gameOverText;
 
     public int score;
     public int lives;
     
     private bool gameOver;
+    public GameObject ship;
+    public Transform shipSpawn;
 
     // Use this for initialization
     void Start () {
         score = 0;
-	}
+        updateScore();
+        gameOverText.text = "";
+
+        StartCoroutine(spawnWave());
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -31,6 +36,8 @@ public class GameController : MonoBehaviour {
         while (true)
         {
             yield return new WaitForSeconds(spawnWait);
+
+            Instantiate(ship, shipSpawn.position, shipSpawn.rotation);
 
             if (gameOver)
             {

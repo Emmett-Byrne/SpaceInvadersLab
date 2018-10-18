@@ -52,16 +52,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\HitDestroy.cs" />
      <Compile Include="Assets\Scripts\Invader.cs" />
      <Compile Include="Assets\Scripts\MoveRight.cs" />
      <Compile Include="Assets\Scripts\MoveUp.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
-     <Compile Include="Assets\Scripts\Reference - read only\DestroyByBoundary1.cs" />
-     <Compile Include="Assets\Scripts\Reference - read only\DestroybyTime1.cs" />
-     <Compile Include="Assets\Scripts\Reference - read only\DestroyOnContact1.cs" />
-     <Compile Include="Assets\Scripts\Reference - read only\GameController1.cs" />
-     <Compile Include="Assets\Scripts\Reference - read only\Mover1.cs" />
-     <Compile Include="Assets\Scripts\Reference - read only\RandomRotator1.cs" />
+     <Compile Include="Assets\Scripts\TimeDestroy.cs" />
  <Reference Include="UnityEngine.CoreModule">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
  </Reference>
