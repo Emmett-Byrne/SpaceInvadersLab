@@ -19,14 +19,14 @@ public class HitDestroy : MonoBehaviour {
         {
             if (other.tag == "Player")
             {
-
+                
             }
             else
             {
                 Destroy(other.gameObject);
                 Destroy(gameObject);
 
-                gameCont.GetComponent<GameController>().addScore(scoreValue);
+                gameCont.GetComponent<GameController>().AddScore(scoreValue);
             }
         }
     }

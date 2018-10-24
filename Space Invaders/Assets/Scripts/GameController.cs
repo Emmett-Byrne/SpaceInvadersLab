@@ -5,10 +5,14 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
-    public float spawnWait;
+    private float spawnWait;
+    public float spawnWaitMaxTime;
 
     public Text scoreText;
     public Text gameOverText;
+    public Text livesText;
+
+    public GameObject InvaderContainer;
 
     public int score;
     public int lives;
@@ -19,47 +23,68 @@ public class GameController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
+        RandomWaitTime();
+        UpdateLives();
+
+        gameOver = false;
+
         score = 0;
-        updateScore();
+        UpdateScore();
         gameOverText.text = "";
 
-        StartCoroutine(spawnWave());
+        StartCoroutine(SpawnWave());
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        UpdateLives();
 
-    IEnumerator spawnWave()
+        if (InvaderContainer.transform.childCount == 0)
+        {
+            EndGame();
+        }
+    }
+
+    IEnumerator SpawnWave()
     {
         while (true)
         {
-            yield return new WaitForSeconds(spawnWait);
-
-            Instantiate(ship, shipSpawn.position, shipSpawn.rotation);
-
             if (gameOver)
             {
                 break;
             }
+
+            yield return new WaitForSeconds(spawnWait);
+
+            Instantiate(ship, shipSpawn.position, shipSpawn.rotation);
         }
     }
 
-    public void addScore(int s)
+    public void AddScore(int s)
     {
         score += s;
-        updateScore();
+        UpdateScore();
     }
 
-    void updateScore()
+    void UpdateScore()
     {
         scoreText.text = "Score: " + score;
     }
 
-    public void endGame()
+    void UpdateLives()
+    {
+        livesText.text = "Lives: " + lives;
+    }
+
+    public void EndGame()
     {
         gameOverText.text = "Game Over \n Press 'R' to restart";
         gameOver = true;
+    }
+
+    void RandomWaitTime()
+    {
+        spawnWait = Random.Range(1.0f, spawnWaitMaxTime);
     }
 }

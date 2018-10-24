@@ -13,6 +13,8 @@ public class Player : MonoBehaviour {
     private Rigidbody rb;
     private float nextFire = 0;
 
+    public int lives;
+
     public int speed;
     public Boundary boundary;
     public float fireRate;
