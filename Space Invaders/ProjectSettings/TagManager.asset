@@ -7,6 +7,7 @@ TagManager:
   - Invader
   - Ship
   - Bunker
+  - Shot
   layers:
   - Default
   - TransparentFX
