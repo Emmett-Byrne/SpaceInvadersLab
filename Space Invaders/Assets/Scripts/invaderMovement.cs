@@ -17,7 +17,10 @@ public class invaderMovement : MonoBehaviour {
 	
 	void Update ()
     {
-        MovementUpdater();
+        if (!GameController.gameOver)
+        {
+            MovementUpdater();
+        }
     }
 
     void MovementUpdater()

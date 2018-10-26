@@ -14,10 +14,10 @@ public class GameController : MonoBehaviour {
 
     public GameObject InvaderContainer;
 
-    public int score;
-    public int lives;
+    public static int score = 0;
+    public static int lives = 3;
     
-    private bool gameOver;
+    public static bool gameOver = false;
     public GameObject ship;
     public Transform shipSpawn;
 
@@ -29,7 +29,6 @@ public class GameController : MonoBehaviour {
 
         gameOver = false;
 
-        score = 0;
         UpdateScore();
         gameOverText.text = "";
 
@@ -40,7 +39,7 @@ public class GameController : MonoBehaviour {
 	void Update () {
         UpdateLives();
 
-        if (InvaderContainer.transform.childCount == 0)
+        if (InvaderContainer.transform.childCount == 0 || gameOver)
         {
             EndGame();
         }
@@ -80,7 +79,16 @@ public class GameController : MonoBehaviour {
     public void EndGame()
     {
         gameOverText.text = "Game Over \n Press 'R' to restart";
+
         gameOver = true;
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            lives = 3;
+            score = 0;
+            gameOver = false;
+            Application.LoadLevel(Application.loadedLevel);
+        }
     }
 
     void RandomWaitTime()

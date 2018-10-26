@@ -108,4 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88f8a27351fa40146ae55114bfd4b2e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shot: {fileID: 1990864683617098, guid: 26380aba5d85100409d930eedd63db97, type: 2}
+  shotSpawn: {fileID: 4591752359550806, guid: 26380aba5d85100409d930eedd63db97, type: 2}
   scoreValue: 5

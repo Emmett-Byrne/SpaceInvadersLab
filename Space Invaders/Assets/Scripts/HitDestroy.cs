@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class HitDestroy : MonoBehaviour {
 
+    public GameObject shot;
+    public Transform shotSpawn;
+
+    private float nextFire = 0;
+    private float fireRate;
 
     private GameObject gameCont;
     public int scoreValue;
@@ -11,6 +16,8 @@ public class HitDestroy : MonoBehaviour {
     void Start ()
     {
         gameCont = GameObject.Find("GameContoller");
+
+        fireRate = Random.Range(5, 20);
     }
 
     void OnTriggerEnter(Collider other)
@@ -29,5 +36,14 @@ public class HitDestroy : MonoBehaviour {
                 gameCont.GetComponent<GameController>().AddScore(scoreValue);
             }
         }
+    }
+
+    void Update()
+    {
+        //if (Time.time > nextFire)
+        //{
+        //    nextFire = Time.time + fireRate;
+        //    Instantiate(shot, this.transform.position, shotSpawn.rotation);
+        //}
     }
 }

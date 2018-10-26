@@ -14,4 +14,12 @@ public class MoveRight : MonoBehaviour {
 
         rb.velocity = transform.right * speed;
     }
+
+    void Update()
+    {
+        if (GameController.gameOver)
+        {
+            rb.velocity = transform.right * 0;
+        }
+    }
 }

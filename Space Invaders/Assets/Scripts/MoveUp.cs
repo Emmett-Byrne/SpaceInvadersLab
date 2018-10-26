@@ -14,4 +14,12 @@ public class MoveUp : MonoBehaviour {
 
         rb.velocity = transform.up * speed;
     }
+    void Update()
+    {
+        if (GameController.gameOver)
+        {
+            rb.velocity = transform.up * 0;
+        }
+    }
+
 }

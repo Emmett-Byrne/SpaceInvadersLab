@@ -1456,8 +1456,6 @@ MonoBehaviour:
   gameOverText: {fileID: 2146169961}
   livesText: {fileID: 708308310}
   InvaderContainer: {fileID: 1966969527}
-  score: 0
-  lives: 3
   ship: {fileID: 1774571265021476, guid: 15ebdbe8375119f4eb95b80ebecfe03a, type: 2}
   shipSpawn: {fileID: 127592578}
 --- !u!1001 &928767755
@@ -2864,12 +2862,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0878af394e4b2e4fa3d3338e32d5961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 0
   speed: 5
   boundary:
     xMin: -8
     xMax: 8
   fireRate: 0.5
+  flashTime: 0.1
   shot: {fileID: 1990864683617098, guid: 26380aba5d85100409d930eedd63db97, type: 2}
   shotSpawn: {fileID: 1244636718}
 --- !u!54 &1833608047
